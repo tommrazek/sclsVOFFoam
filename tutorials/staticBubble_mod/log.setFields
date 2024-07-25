@@ -1,0 +1,39 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2312                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _1d8f0d55f7-20231221 OPENFOAM=2312 version=v2312
+Arch   : "LSB;label=32;scalar=64"
+Exec   : setFields
+Date   : May 16 2024
+Time   : 15:20:48
+Host   : debian
+PID    : 51056
+I/O    : uncollated
+Case   : /home/tommrazek/openfoam/OpenFOAM-v2312/tutorials/multiphase/sclsVOFFoam/staticBubble_mod
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading setFieldsDict
+
+Setting volume field default values
+--> FOAM Warning : Field alpha.water not found
+
+Setting field region values
+
+    Adding cells within sphere, origin = (0.025 0.025 0.025), radius = 0.005
+    Selected 4224/1000000 cells
+--> FOAM Warning : Field alpha.water not found
+
+End
+
