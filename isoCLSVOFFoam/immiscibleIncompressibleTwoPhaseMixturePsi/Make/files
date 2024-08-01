@@ -1,0 +1,3 @@
+immiscibleIncompressibleTwoPhaseMixturePsi.C
+
+LIB = $(FOAM_USER_LIBBIN)/libimmiscibleIncompressibleTwoPhaseMixturePsi

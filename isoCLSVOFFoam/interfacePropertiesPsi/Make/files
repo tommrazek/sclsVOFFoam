@@ -1,0 +1,9 @@
+interfacePropertiesPsi.C
+interfaceCompressionPsi/interfaceCompressionPsi.C
+
+surfaceTensionModelsPsi/surfaceTensionModelPsi/surfaceTensionModelPsi.C
+surfaceTensionModelsPsi/surfaceTensionModelPsi/surfaceTensionModelPsiNew.C
+surfaceTensionModelsPsi/constant/constantSurfaceTensionPsi.C
+surfaceTensionModelsPsi/temperatureDependentPsi/temperatureDependentSurfaceTensionPsi.C
+
+LIB = $(FOAM_USER_LIBBIN)/libinterfacePropertiesPsi
