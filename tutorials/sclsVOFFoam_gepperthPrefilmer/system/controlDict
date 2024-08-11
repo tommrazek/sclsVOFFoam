@@ -1,0 +1,100 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1812                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     sclsVOFFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         0.015;
+
+deltaT          1e-03;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.0001;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  yes;
+
+maxCo           1;
+maxAlphaCo      0.5;
+
+maxDeltaT       1;
+
+
+functions 
+
+{
+   
+    fieldMultiply1
+    {
+        type                        multiply;
+        name                        fieldMultiply;
+        functionObjectLibs          ( "libfieldFunctionObjects.so" );
+        enabled                     true;
+        outputControl               outputTime;
+        timeStart                   0.0;
+        timeEnd                     0.015;
+        resetOnOutput               false;
+        fields  (alpha.water U);
+    }
+
+    fieldAverage1
+    {
+        type                        fieldAverage;
+        functionObjectLibs          ( "libfieldFunctionObjects.so" );
+        enabled                     true;
+        outputControl               outputTime;
+        timeStart                   0.0;
+        timeEnd                     0.015;
+        resetOnOutput               false;
+
+        fields
+        (
+            multiply(alpha.water,U)
+            {
+                mean            on;
+                prime2Mean      off;
+                base            time;
+            }
+
+        );
+    }
+
+}
+
+
+
+
+// ************************************************************************* //
